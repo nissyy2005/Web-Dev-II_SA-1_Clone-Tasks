@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #070410; // navy (dark)
+    color: #FFFFFF; // White text
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #231651; // Purple (dark)
+    padding: 20px;
+    color: #FFFFFF;
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #EEF36A; // Yellow (bright)
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+
+        li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #4DCCBD; // Turquoise
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+
+        button {
+            padding: 10px;
+            background-color: #EEF36A;
+            color: #070410;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+
+            &:hover {
+                background-color: #4DCCBD;
+            }
+        }
+    }
+}
+
+.container {
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.movie-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr); // layout for desktop
+}
+
+.movie-item {
+    background-color: #231651;
+    padding: 20px;
+    border: 2px solid #EEF36A;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .movie-details {
+        margin-top: 10px;
+        padding: 10px;
+        text-align: left;
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #EEF36A;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #FFFFFF;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #EEF36A;
+            color: #070410;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+
+            &:hover {
+                background-color: #4DCCBD;
+            }
+        }
+    }
+}
+
+// Desktop Layout Adjustments-
+.wide {
+    grid-column: span 4; // Full-width for Movie 1
+}
+
+.tall {
+    grid-column: span 2; // Span two columns for Movies 2 and 3
+    grid-row: span 2;
+}
+
+.vertical {
+    grid-column: span 4; // Full-width for Movies 4, 5, and 6
+}
+
+// Tablet Layout Adjustements-
+@media (min-width: 720px) and (max-width: 1024px) {
+    .container {
+        padding: 32px 0;
+    }
+
+    .movie-list {
+        grid-template-columns: repeat(2, 1fr); // Set for Two columns 
+        gap: 32px; // Increased gap 
+    }
+
+    .movie-item {
+        height: auto; // Dynamic height to prevent overlapping
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .movie-details {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    }
+
+    .wide,
+    .tall,
+    .vertical {
+        grid-column: span 1; // Each movie box takes over one column in tablet mode
+        grid-row: span 1; // Reset specific row span for a even layout
+    }
+}
+
+// Mobile Layout
+@media (max-width: 720px) {
+    .movie-list {
+        grid-template-columns: 1fr; // Single column 
+    }
+    .wide, .tall, .vertical {
+        grid-column: span 1;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #070410; // navy (dark)
+    color: #FFFFFF; // White text
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #231651; // Purple (dark)
+    padding: 20px;
+    color: #FFFFFF;
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #EEF36A; // Yellow (bright)
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+
+        li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #4DCCBD; // Turquoise
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+
+        button {
+            padding: 10px;
+            background-color: #EEF36A;
+            color: #070410;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+
+            &:hover {
+                background-color: #4DCCBD;
+            }
+        }
+    }
+}
+
+.container {
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.movie-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr); // layout for desktop
+}
+
+.movie-item {
+    background-color: #231651;
+    padding: 20px;
+    border: 2px solid #EEF36A;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .movie-details {
+        margin-top: 10px;
+        padding: 10px;
+        text-align: left;
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #EEF36A;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #FFFFFF;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #EEF36A;
+            color: #070410;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+
+            &:hover {
+                background-color: #4DCCBD;
+            }
+        }
+    }
+}
+
+// Desktop Layout Adjustments-
+.wide {
+    grid-column: span 4; // Full-width for Movie 1
+}
+
+.tall {
+    grid-column: span 2; // Span two columns for Movies 2 and 3
+    grid-row: span 2;
+}
+
+.vertical {
+    grid-column: span 4; // Full-width for Movies 4, 5, and 6
+}
+
+// Tablet Layout Adjustements-
+@media (min-width: 720px) and (max-width: 1024px) {
+    .container {
+        padding: 32px 0;
+    }
+
+    .movie-list {
+        grid-template-columns: repeat(2, 1fr); // Set for Two columns 
+        gap: 32px; // Increased gap 
+    }
+
+    .movie-item {
+        height: auto; // Dynamic height to prevent overlapping
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .movie-details {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    }
+
+    .wide,
+    .tall,
+    .vertical {
+        grid-column: span 1; // Each movie box takes over one column in tablet mode
+        grid-row: span 1; // Reset specific row span for a even layout
+    }
+}
+
+// Mobile Layout
+@media (max-width: 720px) {
+    .movie-list {
+        grid-template-columns: 1fr; // Single column 
+    }
+    .wide, .tall, .vertical {
+        grid-column: span 1;
+    }
+}
